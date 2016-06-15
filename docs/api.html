@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Webuploader For Amazeui</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link rel="alternate icon" type="image/png" href="../dist/amazeui/assets/i/favicon.png">
+    <link rel="stylesheet" href="../dist/amazeui/assets/css/amazeui.min.css"/>
+    <link rel="stylesheet" href="../dist/css/webuploader.css"/>
+    <script src="../dist/amazeui/assets/js/jquery.min.js"></script>
+    <script src="../dist/amazeui/assets/js/amazeui.min.js"></script>
+    <script src="../dist/js/webuploader.js"></script>
+    <script src="../dist/js/AMUIwebuploader.js"></script>
+</head>
+<body>
+<header class="am-topbar">
+    <h1 class="am-topbar-brand">
+        <a href="#">组件指南</a>
+    </h1>
+
+    <div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse">
+        <ul class="am-nav am-nav-pills am-topbar-nav">
+            <li><a href="../docs/demo.html">示例</a></li>
+            <li class="am-active"><a href="../docs/api.html">API文档</a></li>
+        </ul>
+    </div>
+</header>
+<div class="admin-content am-padding am-padding-top-0 am-padding-bottom-0">
+    <div class="am-cf">
+        <div class="am-fl am-cf">
+            <strong class="am-text-primary am-text-lg">Webuploader For Amazeui API文档</strong>
+        </div>
+    </div>
+</div>
+<article class="am-article am-padding">
+    <div class="am-article-bd">
+        <div id="wmd-preview" class="wmd-preview" data-medium-element="true" style="height: auto; left: 0px;">
+            <h2 id="amuiwebuploader">AMUIwebuploader</h2>
+            <hr data-am-widget="divider" style="" class="am-divider am-divider-dotted"/>
+
+            <p>用JS方式声明上传组件的方法.</p>
+
+            <div class="md-section-divider"></div>
+            <pre>var AMUIwebuploader = {
+}</pre>
+
+            <div class="md-section-divider"></div>
+            <h3 id="参数说明">参数说明</h3>
+
+            <div class="md-section-divider"></div>
+            <h5 id="template">template</h5>
+
+            <p>输出上传按钮的模板</p>
+
+            <div class="md-section-divider"></div>
+            <pre>template: function (id) {
+}</pre>
+            <table class="am-table am-table-bordered">
+                <thead>
+                <tr>
+                    <th>参数</th>
+                    <th>类型</th>
+                    <th>说明</th>
+                    <th>备注</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>id</td>
+                    <td>字符串</td>
+                    <td>上传按钮绑定的ID名称</td>
+                    <td>必填</td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="md-section-divider"></div>
+            <h5 id="init">init</h5>
+
+            <p>初始化上传按钮</p>
+
+            <div class="md-section-divider"></div>
+            <pre>init: function (dom, obj) {
+}</pre>
+            <li class="L0">
+                <code class="language-js"><span class="pln">init</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> </span><span class="pun">(</span><span class="pln">dom</span><span class="pun">,</span><span class="pln"> obj</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></code>
+            </li>
+            <li class="L1"><code class="language-js"><span class="pun">}</span></code></li>
+            </ol></pre>
+            <table class="am-table am-table-bordered">
+                <thead>
+                <tr>
+                    <th>参数</th>
+                    <th>类型</th>
+                    <th>说明</th>
+                    <th>备注</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>dom</td>
+                    <td>字符串</td>
+                    <td>手动追加上传按钮放置的位置。DOM为该标签的ID名称。</td>
+                    <td>必填</td>
+                </tr>
+                <tr>
+                    <td>obj</td>
+                    <td>对象</td>
+                    <td>上传组件的对象。最少填入对象内容为：{id:'按钮的ID名称', name:'上传成功返回的隐藏域名称', pick:{id:'#按钮的ID名称 '}}</td>
+                    <td>必填</td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="md-section-divider"></div>
+            <h2 id="webuploaderforamazeui">$.webuploader_for_amazeui</h2>
+            <hr data-am-widget="divider" style="" class="am-divider am-divider-dotted"/>
+
+            <p>本上传组件封装webuploader的核心函数，可以在别的地方调用，实现快速的上传功能。</p>
+
+            <div class="md-section-divider"></div>
+            <h3 id="参数说明-1">参数说明</h3>
+
+            <div class="md-section-divider"></div>
+            <h5 id="param">param</h5>
+
+            <p>核心函数必要的参数 </p>
+
+            <div class="md-section-divider"></div>
+            <pre>$.webuploader_for_amazeui = function (param){
+}</pre>
+            <table class="am-table am-table-bordered">
+                <thead>
+                <tr>
+                    <th>参数</th>
+                    <th>类型</th>
+                    <th>说明</th>
+                    <th>备注</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>param</td>
+                    <td>对象</td>
+                    <td>上传组件的核心参数</td>
+                    <td>必填</td>
+                </tr>
+                </tbody>
+            </table>
+            <p>此外param参数的最少对象传参示例如下:</p>
+
+            <div class="md-section-divider"></div>
+            <pre>{
+    id:'demo',
+    name:'demo',//上传成功后文件返回相应地址的隐藏域名称。
+    pick:{
+        id:'#demo'
+    }
+}</pre>
+            <p>需要注意的是:对象参数中，id与pick中的id名称必须一致。但pick中的id前<code class="">带上#号</code>,此外name值是上传成功后文件返回相应地址的隐藏域名称，若为多个文件上传，name应该填写为数组，如：more[] <br>
+                其他的可调用参数请参考webuploader官方文档<a href="http://fex.baidu.com/webuploader/doc/index.html" target="_blank">webuploader</a>
+            </p>
+
+            <div class="md-section-divider"></div>
+            <h2 d id="data-am-webuploader-simple">data-am-webuploader-simple</h2>
+            <hr data-am-widget="divider" style="" class="am-divider am-divider-dotted"/>
+            <p>简易版的上传组件</p>
+
+            <div class="md-section-divider"></div>
+            <pre>('[data-am-webuploader-simple]').each(function () {
+}</pre>
+            <p>在任意页面的标签中，只要声明了data-am-webuploader-simple，并符合$.webuploader_for_amazeui函数的最少对象参数，则可声明上传组件。</p>
+
+            <div class="md-section-divider"></div>
+            <pre>&lt;div data-am-webuploader-simple=&quot;{id:&#39;demo&#39;, name:&#39;thumb&#39;, pick:{id:&#39;#demo&#39;}}&quot;&gt;&lt;/div&gt;</pre>
+            
+            <h2 id="webuploaderforamazeui">后端开发</h2>
+            <hr data-am-widget="divider" style="" class="am-divider am-divider-dotted"/>
+
+            <p>上传组件对于后端提供统一的返回数据。组件附带的PHP上传库仅为演示，不能用于正式的生产环境中！返回数据格式要求如下(格式为:json)：</p>
+            <pre>{"state":"SUCCESS","msg":"\u4e0a\u4f20\u6210\u529f","original":"\u6d4b\u8bd5\u7528\u7684\u56fe\u7247.jpg","size":"1024","type":".jpg","url":"\/webuploader_for_amazeui\/server\/upload\/jhu1h21356ag.jgp"}</pre>
+            <table class="am-table am-table-bordered">
+                <thead>
+                <tr>
+                    <th>参数</th>
+                    <th>类型</th>
+                    <th>说明</th>
+                    <th>备注</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>state</td>
+                    <td>字符串</td>
+                    <td>上传的状态。成功则请返回:'SUCCESS', 失败返回:'ERROR'</td>
+                    <td>必填</td>
+                </tr>
+                <tr>
+                    <td>msg</td>
+                    <td>字符串</td>
+                    <td>提示信息，填写准确信息便于用户知道实际的问题</td>
+                    <td>必填</td>
+                </tr>
+                <tr>
+                    <td>original</td>
+                    <td>字符串</td>
+                    <td>所选择上传的文件名。</td>
+                    <td>非必填| 上传成功时才返回的，目前仅用于做预留扩展。</td>
+                </tr>
+                <tr>
+                    <td>size</td>
+                    <td>字符串</td>
+                    <td>所选择上传文件的大小</td>
+                    <td>非必填| 上传成功时才返回的，目前仅用于做预留扩展。</td>
+                </tr>
+                <tr>
+                    <td>type</td>
+                    <td>字符串</td>
+                    <td>所选择上传文件的类型</td>
+                    <td>非必填| 上传成功时才返回的，目前仅用于做预留扩展。</td>
+                </tr>
+                <tr>
+                    <td>url</td>
+                    <td>字符串</td>
+                    <td>上传成功后，后端返回上传成功的文件可访问地址。</td>
+                    <td>state为SUCCESS时必填。</td>
+                </tr>
+                </tbody>
+            </table>
+            
+        </div>
+    </div>
+</article>
+
+</body>
+</html>

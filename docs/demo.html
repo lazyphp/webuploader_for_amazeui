@@ -1,51 +1,148 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
-  <meta charset="UTF-8">
-  <title>Landing Page | Amaze UI Example</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1">
-  <meta name="format-detection" content="telephone=no">
-  <meta name="renderer" content="webkit">
-  <meta http-equiv="Cache-Control" content="no-siteapp"/>
-  <link rel="alternate icon" type="image/png" href="../assets/i/favicon.png">
-  <link rel="stylesheet" href="../assets/css/amazeui.min.css"/>
-  <link rel="stylesheet" href="../dist/ui-dialog.css"/>
+    <meta charset="UTF-8">
+    <title>Webuploader For Amazeui</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link rel="alternate icon" type="image/png" href="../dist/amazeui/assets/i/favicon.png">
+    <link rel="stylesheet" href="../dist/amazeui/assets/css/amazeui.min.css"/>
+    <link rel="stylesheet" href="../dist/css/webuploader.css"/>
+    <script src="../dist/amazeui/assets/js/jquery.min.js"></script>
+    <script src="../dist/amazeui/assets/js/amazeui.min.js"></script>
+    <script src="../dist/js/webuploader.js"></script>
+    <script src="../dist/js/AMUIwebuploader.js"></script>
 </head>
 <body>
+<header class="am-topbar">
+    <h1 class="am-topbar-brand">
+        <a href="#">组件指南</a>
+    </h1>
 
+    <div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse">
+        <ul class="am-nav am-nav-pills am-topbar-nav">
+            <li class="am-active"><a href="../docs/demo.html">示例</a></li>
+            <li><a href="../docs/api.html">API文档</a></li>
+        </ul>
 
-<div>点击我</div>
+    </div>
+</header>
+<div class="admin-content am-padding am-padding-top-0 am-padding-bottom-0">
+    <div class="am-cf">
+        <div class="am-fl am-cf">
+            <strong class="am-text-primary am-text-lg">基于百度webuploader的AMUI上传组件（支持移动端）</strong>
+        </div>
+    </div>
+</div>
+<form action="" class="am-text-sm" method="POST" data-am-validator>
 
+    <hr data-am-widget="divider" style="" class="am-divider am-divider-dotted"/>
+    <div class="am-g">
+        <div class="am-u-sm-12 am-u-sm-centered">
+            <div class="am-form-group">
+                <label class="am-block">单文件上传</label>
 
-<script src="../assets/js/jquery.min.js"></script>
-<script src="../assets/js/amazeui.min.js"></script>
+                <div data-am-webuploader-simple="{id:'demo', name:'thumb', pick:{id:'#demo'}}"></div>
+                <div class="am-alert am-alert-secondary am-text-xs " data-am-alert>
+                    <i class="am-icon-lightbulb-o"></i> 点击上传队列中的图片，可将其移出队列中。
+                </div>
+                <p class="am-text-secondary">相应代码:</p>
+                <pre class="am-pre-scrollable">&lt;div data-am-webuploader-simple=&quot;{id:&#39;demo&#39;, name:&#39;thumb&#39;, pick:{id:&#39;#demo&#39;}}&quot;&gt;&lt;/div&gt;</pre>
+            </div>
+        </div>
+    </div>
 
-<script src="../dist/dialog-min.js"></script>
+    <hr data-am-widget="divider" style="" class="am-divider am-divider-dotted"/>
+    <div class="am-g">
+        <div class="am-u-sm-12 am-u-sm-centered">
+            <div class="am-form-group">
+                <label class="am-block">多文件上传</label>
 
-<script>
+                <div data-am-webuploader-simple="{id:'more', name:'more[]',pick:{id:'#more', multiple:true}}"></div>
+                <p class="am-text-secondary">相应代码:</p>
+                <pre class="am-pre-scrollable">&lt;div data-am-webuploader-simple=&quot;{id:&#39;more&#39;, name:&#39;more[]&#39;,pick:{id:&#39;#more&#39;, multiple:true}}&quot;&gt;&lt;/div&gt;</pre>
+            </div>
+        </div>
+    </div>
 
+    <hr data-am-widget="divider" style="" class="am-divider am-divider-dotted"/>
+    <div class="am-g">
+        <div class="am-u-sm-12 am-u-sm-centered">
+            <div class="am-form-group">
+                <label class="am-block">只能上传特定文件(txt,doc,docx,xls,xlsx)</label>
 
-$(function(){
-    var d = dialog({
-        title: '提示',
-        content: '按钮回调函数返回 false 则不许关闭',
-        okValue: '确定',
-        ok: function () {
-            this.title('提交中…');
-            return false;
-        },
-        cancelValue: '取消',
-        cancel: function () {}
-    });
-    d.show($(".footer")[0]);
+                <div data-am-webuploader-simple="{id:'file', name:'file',pick:{id:'#file'}, accept:{title:'File', extensions: 'txt,doc,docx,xls,xlsx', mimeTypes:'text/plain,application/msword,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' }}"></div>
+                <div class="am-alert am-alert-secondary am-text-xs " data-am-alert>
+                    <i class="am-icon-lightbulb-o"></i> 常用的文件格式可以参考：<a href="https://www.sitepoint.com/web-foundations/mime-types-complete-list/" target="_blank" style="color:#F37B1D ">点击访问</a>
+                    <br/>
+                    图片格式可以参考：accept:{title:'Images', extensions:''gif,jpg,jpeg,bmp,png', mimeTypes:'image/*'}
+                </div>
+                <p class="am-text-secondary">相应代码:</p>
+                <pre class="am-pre-scrollable">&lt;div data-am-webuploader-simple=&quot;{id:&#39;file&#39;, name:&#39;file&#39;,pick:{id:&#39;#file&#39;}, accept:{title:&#39;File&#39;, extensions: &#39;txt,doc,docx,xls,xlsx&#39;, mimeTypes:&#39;text/plain,application/msword,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet&#39; }}&quot;&gt;&lt;/div&gt;</pre>
+            </div>
+        </div>
+    </div>
 
-    $("body").on("click", "[data-am-dialog]",function(){
-        var options = AMUI.utils.parseOptions($(this).attr('data-am-dialog'));
+    <hr data-am-widget="divider" style="" class="am-divider am-divider-dotted"/>
+    <div class="am-g">
+        <div class="am-u-sm-12 am-u-sm-centered">
+            <div class="am-form-group">
+                <label class="am-block">文件分片上传</label>
 
-    } )
-})
-</script>
+                <div data-am-webuploader-simple="{id:'chunked', name:'chunked[]', chunked:true, chunkSize: 50 * 1024, chunkRetry: 10, pick:{id:'#chunked', multiple:true}}"></div>
+                <div class="am-alert am-alert-secondary am-text-xs " data-am-alert>
+                    <i class="am-icon-lightbulb-o"></i> 一般默认的服务器上传大小为2M，使用分片上传可以有效避免文件上传限制。但后端需要做相应的配置，具体请自行参考本文中的fileupload.php<br/>
+                    分片上传相关参数: chunked:true, chunkSize: 50 * 1024, chunkRetry: 10
+                </div>
+                <p class="am-text-secondary">相应代码:</p>
+                <pre class="am-pre-scrollable">&lt;div data-am-webuploader-simple=&quot;{id:&#39;chunked&#39;, name:&#39;chunked[]&#39;, chunked:true, chunkSize: 50 * 1024, chunkRetry: 10, pick:{id:&#39;#chunked&#39;, multiple:true}}&quot;&gt;&lt;/div&gt;</pre>
+            </div>
+        </div>
+    </div>
+
+    <hr data-am-widget="divider" style="" class="am-divider am-divider-dotted"/>
+    <div class="am-g">
+        <div class="am-u-sm-12 am-u-sm-centered">
+            <div class="am-form-group">
+                <label class="am-block">使用JS初始化</label>
+
+                <div id="js-init"></div>
+                <script>
+                    $(function () {
+                        AMUIwebuploader.init('js-init', {
+                            id: 'jscreate',
+                            name: 'jscreate',
+                            pick: {
+                                id: '#jscreate'
+                            }
+                        });
+                    })
+                </script>
+                <div class="am-alert am-alert-secondary am-text-xs " data-am-alert>
+                    <i class="am-icon-lightbulb-o"></i> 若觉得HTML声明对象方式太过冗长，可以尝试使用JS方式声明。
+                </div>
+                <p class="am-text-secondary">相应代码:</p>
+                <pre class="am-pre-scrollable">&lt;div id=&quot;js-init&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+    $(function(){
+        AMUIwebuploader.init(&#39;js-init&#39;, {
+            id:&#39;jscreate&#39;,
+            name:&#39;jscreate&#39;,
+            pick:{
+                id:&#39;#jscreate&#39;
+            }
+        });
+    })
+&lt;/script&gt;</pre>
+            </div>
+        </div>
+    </div>
+
+</form>
+
 </body>
 </html>
